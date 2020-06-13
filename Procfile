@@ -1,2 +1,2 @@
-web: npm install
-web: npm run start
+web: yarn install
+web: yarn run start
