@@ -1,7 +1,7 @@
 module.exports = {
     GOOGLE:{
-        clientID:"481275058042-uuttcp9rmncvm91ip13quk3r4lq39o5d.apps.googleusercontent.com",
-        clientSecret:"PYLuoGv4-FzjdICXMx1TNFaB",
+        clientID:"481275058042-v8ifll5f9bg2qa562hvm0qheqa6s90h7.apps.googleusercontent.com",
+        clientSecret:"lGGNy4R3Nkk-Hg0N6a0JQKIE",
         callback_url:`https://social-login-test-api.herokuapp.com/auth/google/callback`
     },
     FACEBOOK: {
