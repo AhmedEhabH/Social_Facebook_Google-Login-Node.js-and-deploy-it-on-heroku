@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <% if(user) { %>
+        <ul>
+            <li><%= user.username %></li>
+            <li><%= user.email %></li>
+            <li><img src="<%= user.picture.path %>" alt="<%= user.username %>"></li>
+        </ul>
+        <% if(user.facebookId) {%>
+            <a href="/facebook/logout">Log out</a>
+        <%} else {%>
+            <a href="/google/logout">Log out</a>
+        <%}%>
+    <%} else {%>
+        Log in
+        <ul>
+            <li><a href="/auth/google">Google</a></li>
+            <li><a href="/auth/facebook">Facebook</a></li>
+        </ul>
+    <%}%>
+</body>
+</html>
