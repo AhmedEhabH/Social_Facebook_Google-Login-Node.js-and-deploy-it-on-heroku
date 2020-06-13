@@ -3,7 +3,7 @@ const express = require('express');
 const expressSession = require('express-session');
 const passport = require('passport');
 
-const user = require('./models/users/index');
+// const user = require('./models/users/index');
 
 const PORT = process.env.PORT || 2007;
 
