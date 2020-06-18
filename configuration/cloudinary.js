@@ -10,14 +10,4 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-function upload(url){
-    cloudinary.uploader.upload(url, (error, result)=>{
-        console.log('result');
-        console.log(result);
-        console.log('error');
-        console.log(error);
-        return result;
-    });
-}
-
 module.exports.cloudinary = cloudinary;

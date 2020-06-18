@@ -4,7 +4,7 @@ let cloudinary = require('../configuration/cloudinary').cloudinary;
 
 function uploadImage(url) {
     return new Promise((resolve, reject) => {
-        cloudinary.uploader.upload(url, async (error, result) => {
+        cloudinary.uploader.upload(url, (error, result) => {
             console.log('result');
             console.log(result);
             console.log('error');
