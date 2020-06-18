@@ -4,10 +4,11 @@ const savePicturesController = require("./savePictures");
 
 async function prepareFacebookUser(profile, logger) {
     logger.info("prepare facebook user");
-    let { path } = await savePicturesController.facebookPhoto(
+    let path = await savePicturesController.facebookPhoto(
         url = profile._json.picture.data.url,
         facebookId = profile.id
-    )
+    ).path;
+
     return new User({
         facebookId:profile.id,
         username: (profile.displayName) ? profile.displayName : "NotFound",
@@ -57,10 +58,11 @@ module.exports.findOrCreateFacebookUser = async (profile, logger) => {
 
 async function prepareGoogleUser(profile, logger) {
     logger.info("prepare facebook user");
-    let { path } = await savePicturesController.googlePhoto(
+    let path = await savePicturesController.googlePhoto(
         url = profile._json.picture,
         googleId = profile.id
-    )
+    ).path;
+    
     return new User({
         googleId:profile.id,
         username: (profile.displayName) ? profile.displayName : "NotFound",
