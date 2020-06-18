@@ -1,6 +1,6 @@
 const FacebookStrategy = require('passport-facebook').Strategy;
 const UserDbController = require('../../controllers/userDbController');
-const config = require('../index');
+// const config = require('../index');
 
 
 module.exports = (logger) => new FacebookStrategy(

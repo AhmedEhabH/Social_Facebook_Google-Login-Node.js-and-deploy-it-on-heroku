@@ -1,6 +1,6 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const UserDbController = require('../../controllers/userDbController');
-const config = require('../index');
+// const config = require('../index');
 
 module.exports = (logger) => new GoogleStrategy(
     {
