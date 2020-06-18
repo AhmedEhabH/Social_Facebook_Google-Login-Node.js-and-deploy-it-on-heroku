@@ -8,7 +8,8 @@ async function prepareFacebookUser(profile, logger) {
         url = profile._json.picture.data.url,
         facebookId = profile.id
     ).path;
-
+    logger.info("path");
+    logger.info(path);
     return new User({
         facebookId:profile.id,
         username: (profile.displayName) ? profile.displayName : "NotFound",
@@ -62,7 +63,7 @@ async function prepareGoogleUser(profile, logger) {
         url = profile._json.picture,
         googleId = profile.id
     ).path;
-    
+
     return new User({
         googleId:profile.id,
         username: (profile.displayName) ? profile.displayName : "NotFound",
