@@ -9,7 +9,7 @@ function uploadImage(url) {
             console.log(result);
             console.log('error');
             console.log(error);
-            resolve(result.url);
+            resolve({path:result.url});
         });
     })
 

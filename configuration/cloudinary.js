@@ -20,6 +20,4 @@ function upload(url){
     });
 }
 
-module.exports = {
-    cloudinary: cloudinary
-}
+module.exports.cloudinary = cloudinary;
