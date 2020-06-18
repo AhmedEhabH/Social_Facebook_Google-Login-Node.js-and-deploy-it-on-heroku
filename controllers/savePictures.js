@@ -1,6 +1,19 @@
 let https = require('https');
 let fs = require('fs');
-let upload = require('../configuration/cloudinary');
+let cloudinary = require('../configuration/cloudinary').cloudinary;
+
+function uploadImage(url) {
+    return new Promise((resolve, reject) => {
+        cloudinary.uploader.upload(url, async (error, result) => {
+            console.log('result');
+            console.log(result);
+            console.log('error');
+            console.log(error);
+            resolve(result.url);
+        });
+    })
+
+}
 
 function savePhoto(url, path) {
     // return new Promise((resolve, reject) => {
@@ -10,7 +23,7 @@ function savePhoto(url, path) {
     //     });
     // });
 
-    return upload.uploadImage(url).url;
+    return uploadImage(url);
 }
 
 module.exports.uploadedPhoto = () => {

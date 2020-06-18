@@ -20,6 +20,6 @@ function upload(url){
     });
 }
 
-module.exports.uploadImage = (url) => {
-    return upload(url)
+module.exports = {
+    cloudinary: cloudinary
 }
