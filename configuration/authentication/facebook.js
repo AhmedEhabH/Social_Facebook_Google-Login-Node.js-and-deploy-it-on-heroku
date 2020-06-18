@@ -8,7 +8,7 @@ module.exports = (logger) => new FacebookStrategy(
         clientID: process.env.FACEBOOK_CLIENT_ID, // config.FACEBOOK.clientID
         clientSecret: process.env.FACEBOOK_CLIENT_SECRET, // config.FACEBOOK.clientSecret
         callbackURL: process.env.FACEBOOK_CALLBACK_URL, // config.FACEBOOK.callback_url
-        profileFields: process.env.FACEBOOK_PROFILE_FIELDS // config.FACEBOOK.profileFields
+        profileFields: ['id', 'displayName', 'photos', 'email'] // config.FACEBOOK.profileFields
     },
     (accessToken, refreshToken, profile, done) => {
         process.nextTick(async () => {
