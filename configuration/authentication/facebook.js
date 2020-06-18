@@ -5,10 +5,10 @@ const config = require('../index');
 
 module.exports = (logger) => new FacebookStrategy(
     {
-        clientID: config.FACEBOOK.clientID,
-        clientSecret: config.FACEBOOK.clientSecret,
-        callbackURL: config.FACEBOOK.callback_url,
-        profileFields: config.FACEBOOK.profileFields
+        clientID: process.env.FACEBOOK_CLIENT_ID, // config.FACEBOOK.clientID
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET, // config.FACEBOOK.clientSecret
+        callbackURL: process.env.FACEBOOK_CALLBACK_URL, // config.FACEBOOK.callback_url
+        profileFields: process.env.FACEBOOK_PROFILE_FIELDS // config.FACEBOOK.profileFields
     },
     (accessToken, refreshToken, profile, done) => {
         process.nextTick(async () => {

@@ -4,9 +4,9 @@ const config = require('../index');
 
 module.exports = (logger) => new GoogleStrategy(
     {
-        clientID: config.GOOGLE.clientID,
-        clientSecret: config.GOOGLE.clientSecret,
-        callbackURL: config.GOOGLE.callback_url
+        clientID: process.env.GOOGLE_CLIENT_ID, // config.GOOGLE.clientID
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET, // config.GOOGLE.clientSecret
+        callbackURL: process.env.GOOGLE_CALLBACK_URL // config.GOOGLE.callback_url
     },
     async (accessToken, refreshToken, profile, done) => {
         logger.info("Google Profile");
