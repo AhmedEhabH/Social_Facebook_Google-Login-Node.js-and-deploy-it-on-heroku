@@ -16,14 +16,14 @@ function uploadImage(url) {
 }
 
 function savePhoto(url, path) {
-    // return new Promise((resolve, reject) => {
-    //     https.get(url, (res) => {
-    //         res.pipe(fs.createWriteStream(path));
-    //         resolve({ path: path.substr(8) });
-    //     });
-    // });
+    return new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+            res.pipe(fs.createWriteStream(path));
+            resolve({ path: path.substr(8) });
+        });
+    });
 
-    return uploadImage(url);
+    // return uploadImage(url);
 }
 
 module.exports.uploadedPhoto = () => {
@@ -33,11 +33,13 @@ module.exports.uploadedPhoto = () => {
 module.exports.facebookPhoto = (url, facebookId) => {
     let date = (new Date()).toISOString();
     let path = `./public/images/users/facebook/${facebookId}-${date}.png`
-    return savePhoto(url, path);
+    // return savePhoto(url, path);
+    return uploadImage(url);
 }
 
 module.exports.googlePhoto = (url, googleId) => {
     let date = (new Date()).toISOString();
     let path = `./public/images/users/google/${googleId}-${date}.png`
-    return savePhoto(url, path);
+    // return savePhoto(url, path);
+    return uploadImage(url);
 }
